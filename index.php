@@ -4,10 +4,14 @@ var_dump($_GET['password_length']);
 
 // inizializzo la sessione
 session_start();
-// se il parametro è settato
+// se il parametro della lunghezza è settato
 if (isset($_GET['password_length'])) {
-    // salvo il valore del parametro nella sessione
+    // salvo il valore dei parametri nella sessione
     $_SESSION['password_length'] = $_GET['password_length'];
+    $_SESSION['upper_letters'] = isset($_GET['upper_letters']);
+    $_SESSION['lower_letters'] = isset($_GET['lower_letters']);
+    $_SESSION['numbers'] = isset($_GET['numbers']);
+    $_SESSION['symbols'] = isset($_GET['symbols']);
 }
 
 
@@ -93,19 +97,19 @@ if (
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="lower_letters">
+                            <input class="form-check-input" type="checkbox" name="lower_letters" id="lower_letters">
                             <label class="form-check-label" for="lower_letters">
                                 Lettere minuscole
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="numbers">
+                            <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
                             <label class="form-check-label" for="numbers">
                                 Numeri
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="symbols">
+                            <input class="form-check-input" type="checkbox" name="symbols" id="symbols">
                             <label class="form-check-label" for="symbols">
                                 Simboli
                             </label>

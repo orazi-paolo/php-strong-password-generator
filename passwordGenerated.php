@@ -27,7 +27,13 @@ session_start();
     </header>
     <main>
         <p class="text-white text-center">
-            La password generata è: <?php echo random_password($_SESSION['password_length']) ?>
+            La password generata è: <?php echo random_password(
+                                        $_SESSION['password_length'],
+                                        $_SESSION['upper_letters'],
+                                        $_SESSION['lower_letters'],
+                                        $_SESSION['numbers'],
+                                        $_SESSION['symbols']
+                                    ) ?>
         </p>
     </main>
 </body>
