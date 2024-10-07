@@ -1,6 +1,21 @@
 <?php
 require_once __DIR__ . '/functions.php';
 var_dump($_GET['password_length']);
+
+
+if (
+    // se il parametro è maggiore di 0
+    $_GET['password_length'] > 0
+    // se è settato
+    && isset($_GET['password_length'])
+    // se non è vuoto
+    && !empty($_GET['password_length'])
+) {
+    // reinderizza alla pagina passwordGenerated.php
+    header('Location: passwordGenerated.php');
+    // exit serve per terminare l esecuzione della pagina
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +57,7 @@ var_dump($_GET['password_length']);
             <?php
             }
             ?>
-            <form action="" method="get" class="p-4">
+            <form method="get" class="p-4">
                 <div class="row gy-3">
                     <div class="col-6">
                         <label for="password_length">Lunghezza password:</label>
