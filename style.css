@@ -1,3 +1,15 @@
 body {
     background-color: #001731 !important;
 }
+
+h1 {
+    color: #7b8990 !important;
+}
+
+form {
+    background-color: white;
+}
+
+.empty {
+    background-color: #cff4fc;
+}
