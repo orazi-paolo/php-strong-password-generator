@@ -1,5 +1,8 @@
 <?php
 require __DIR__ . '/functions.php';
+
+// inizializzo la sessione
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +27,7 @@ require __DIR__ . '/functions.php';
     </header>
     <main>
         <p class="text-white text-center">
-            La password generata è: <?php echo random_password(intval($_GET['password_length'])) ?>
+            La password generata è: <?php echo random_password($_SESSION['password_length']) ?>
         </p>
     </main>
 </body>

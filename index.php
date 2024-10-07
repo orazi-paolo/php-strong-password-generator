@@ -2,6 +2,14 @@
 require_once __DIR__ . '/functions.php';
 var_dump($_GET['password_length']);
 
+// inizializzo la sessione
+session_start();
+// se il parametro è settato
+if (isset($_GET['password_length'])) {
+    // salvo il valore del parametro nella sessione
+    $_SESSION['password_length'] = $_GET['password_length'];
+}
+
 
 if (
     // se il parametro è maggiore di 0
