@@ -74,20 +74,43 @@ if (
                         <input type="number" id="password_length" name="password_length"
                             placeholder="Inserisci il numero dei caratteri">
                     </div>
-                    <!-- se c'è e se non è vuoto -->
-                    <?php
-                    if (isset($_GET['password_length']) && !empty($_GET['password_length'])) {
-                    ?>
-                    <div class="col-12">
-                        <!-- stampa la password generata -->
-                        <p>
-                            La password generata è: <?php echo random_password(intval($_GET['password_length'])) ?>
-                        </p>
-
+                    <div class="col-6">
+                        <label for="repetitions">Consenti ripetizioni di uno o più caratteri:</label>
                     </div>
-                    <?php
-                    }
-                    ?>
+                    <div class="col-6">
+                        <input type="checkbox" id="repetitions" name="repetitions"> Non consentire
+                    </div>
+                    <div class="col-6">
+                        <p>
+                            Seleziona i tipi di caratteri che vuoi escludere dalla password:
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" name="upper_letters" type="checkbox" id="upper_letters">
+                            <label class="form-check-label" for="upper_letters">
+                                Lettere maiuscole
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="lower_letters">
+                            <label class="form-check-label" for="lower_letters">
+                                Lettere minuscole
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="numbers">
+                            <label class="form-check-label" for="numbers">
+                                Numeri
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="symbols">
+                            <label class="form-check-label" for="symbols">
+                                Simboli
+                            </label>
+                        </div>
+                    </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Invia</button>
                         <button type="reset" class="btn btn-secondary">Annulla</button>
